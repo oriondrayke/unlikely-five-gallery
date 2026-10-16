@@ -33,14 +33,18 @@
     .button{display:inline-flex;align-items:center;padding:11px 17px;text-decoration:none;border:1px solid var(--ink);border-radius:99px;font-size:.86rem;font-weight:700}
     .button.primary{background:var(--ink);color:var(--white)}.button:hover,.button:focus-visible{transform:translateY(-2px)}
     footer{border-top:1px solid var(--line);padding:20px 0 30px;display:flex;justify-content:space-between;gap:20px;color:#637164;font-size:.8rem}
+    html{scroll-behavior:smooth}nav{display:flex;gap:18px;flex-wrap:wrap;font-size:.86rem}nav a{text-underline-offset:5px}
+    .homes{padding:50px 0 70px;border-top:1px solid var(--line);scroll-margin-top:20px}.homes h2{font-size:clamp(2.7rem,6vw,5rem);line-height:1.05;margin-bottom:20px}.homes-intro{max-width:680px;color:#334838}.home-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:32px}.home-card{margin:0;background:var(--white);border:1px solid var(--line)}.home-card:first-child{grid-column:1/-1}.home-open{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}.home-open img{width:100%;height:auto;display:block}.home-open:focus-visible{outline:3px solid var(--leaf);outline-offset:4px}.home-card figcaption{padding:20px 22px}.home-card h3{font:500 1.55rem Georgia,serif;margin:5px 0 10px}.home-card p{margin:0;color:#57685a;font-size:.92rem}.home-number{font-size:.72rem;letter-spacing:.15em;color:#607960}.home-note{font-size:.82rem;color:#57685a;margin-top:25px}
+    dialog{padding:0;border:0;background:var(--ink);color:white;max-width:96vw;max-height:94vh;width:1400px}dialog::backdrop{background:#07100de8}.viewer-bar{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;gap:15px}.viewer-bar button{padding:8px 15px;border:1px solid white;border-radius:25px;color:white;background:transparent;cursor:pointer}dialog img{display:block;width:100%;max-height:80vh;object-fit:contain}.viewer-bar a{font-size:.85rem}
+    @media(max-width:650px){.home-grid{grid-template-columns:1fr}.home-card:first-child{grid-column:auto}.top{flex-wrap:wrap}.homes{padding-top:35px}.viewer-bar{flex-wrap:wrap}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
     @media(max-width:850px){main{grid-template-columns:1fr;gap:52px;min-height:0}.portrait{max-width:690px}.portrait img{height:auto;min-height:0;max-height:800px}.copy{max-width:690px}}
     @media(max-width:540px){.wrap{width:min(100% - 26px,1180px)}.edition{display:none}main{padding:27px 0 55px;gap:37px}.portrait{box-shadow:8px 9px 0 var(--leaf)}h1{margin-top:15px}footer{display:block}}
   </style>
 </head>
 <body>
-  <header class="wrap top"><a class="brand" href="./">THIAGO NASCIMENTO</a><span class="edition">Character study · October 2026</span></header>
+  <header class="wrap top"><a class="brand" href="./">THIAGO NASCIMENTO</a><nav aria-label="Main navigation"><a href="#portrait">Portrait</a><a href="designs/full-body/">Full body</a><a href="#homes">Homes</a></nav></header>
   <main class="wrap">
-    <a class="portrait" href="images/thiago.jpg" target="_blank" rel="noopener" aria-label="Open Thiago portrait at full size"><img src="images/thiago.jpg" alt="Thiago at a café, with widely spaced eyes and pronounced cheekbones"><span>OPEN FULL PORTRAIT ↗</span></a>
+    <a id="portrait" class="portrait" href="images/thiago.jpg" target="_blank" rel="noopener" aria-label="Open Thiago portrait at full size"><img src="images/thiago.jpg" alt="Thiago at a café, with widely spaced eyes and pronounced cheekbones"><span>OPEN FULL PORTRAIT ↗</span></a>
     <div class="copy">
       <div class="eyebrow">Original fictional person / 01</div>
       <h1>Thiago<br>Nascimento.</h1>
@@ -51,6 +55,34 @@
       <p class="note">Thiago is an original fictional character. This is an AI-generated visual concept.</p>
     </div>
   </main>
+  <section class="wrap homes" id="homes" aria-labelledby="homes-title">
+    <div class="eyebrow">His world / five starting points</div>
+    <h2 id="homes-title">Thiago’s homes.</h2>
+    <p class="homes-intro">Deep house, close to home. Five room concepts inspired by the rural surroundings of Ishaka, Bushenyi, Uganda. Simple wooden furniture, familiar green views and older speakers with room for a future name.</p>
+    <p class="homes-intro">Explore the rooms below. Tap any image to see it larger.</p>
+    <div class="home-grid">
+      <figure class="home-card"><button class="home-open" data-title="01 — Window Light" aria-label="Enlarge Window Light room"><img src="images/homes/01-window-light.jpg" width="1536" height="1024" loading="lazy" alt="Cream plaster room with a large garden window, wooden DJ table and a close-up of a wood-sided speaker with blank badge"></button><figcaption><span class="home-number">HOME 01</span><h3>Window Light</h3><p>A quiet cream room, afternoon light and the original speaker study. The starting point.</p></figcaption></figure>
+      <figure class="home-card"><button class="home-open" data-title="02 — Red Brick Corner" aria-label="Enlarge Red Brick Corner room"><img src="images/homes/02-red-brick-corner.jpg" width="1536" height="1024" loading="lazy" alt="DJ room with exposed red brick wall, wooden bench, simple table and speakers on timber stands"></button><figcaption><span class="home-number">HOME 02</span><h3>Red Brick Corner</h3><p>Exposed brick, a bench by the window and a warm, handmade feel.</p></figcaption></figure>
+      <figure class="home-card"><button class="home-open" data-title="03 — Blue Window Room" aria-label="Enlarge Blue Window Room"><img src="images/homes/03-blue-window-room.jpg" width="1536" height="1024" loading="lazy" alt="Modest blue and cream room with open blue shutters, banana plants outside and a wooden DJ table"></button><figcaption><span class="home-number">HOME 03</span><h3>Blue Window Room</h3><p>Faded blue shutters, a cement floor and a clear view of the banana garden.</p></figcaption></figure>
+      <figure class="home-card"><button class="home-open" data-title="04 — Veranda Door Studio" aria-label="Enlarge Veranda Door Studio"><img src="images/homes/04-veranda-door-studio.jpg" width="1536" height="1024" loading="lazy" alt="Warm village studio with terracotta cement floor, an open veranda door and vintage wooden speakers"></button><figcaption><span class="home-number">HOME 04</span><h3>Veranda Door Studio</h3><p>A warm bulb, a terracotta floor and an open door for evening sessions.</p></figcaption></figure>
+      <figure class="home-card"><button class="home-open" data-title="05 — Green Corner Home" aria-label="Enlarge Green Corner Home"><img src="images/homes/05-green-corner-home.jpg" width="1536" height="1024" loading="lazy" alt="Sage green home studio with two garden windows, a small record shelf and a modest DJ setup"></button><figcaption><span class="home-number">HOME 05</span><h3>Green Corner Home</h3><p>Soft green walls, a small record shelf and morning light through two windows.</p></figcaption></figure>
+    </div>
+    <p class="home-note">Original AI-generated room concepts, not photographs of actual homes. These are five alternatives; a final room has not been selected. Speaker badges are reserved for future branding; no sponsorship is claimed.</p>
+  </section>
+  <dialog id="home-viewer" aria-labelledby="viewer-title"><div class="viewer-bar"><span id="viewer-title"></span><a id="viewer-download" download>Download image ↓</a><button type="button" id="viewer-close" autofocus>Close ×</button></div><img id="viewer-image" alt=""></dialog>
+  <script>
+    const viewer=document.getElementById('home-viewer');
+    document.querySelectorAll('.home-open').forEach(button=>button.addEventListener('click',()=>{
+      const source=button.querySelector('img');
+      document.getElementById('viewer-image').src=source.src;
+      document.getElementById('viewer-image').alt=source.alt;
+      document.getElementById('viewer-title').textContent=button.dataset.title;
+      document.getElementById('viewer-download').href=source.src;
+      viewer.showModal();
+    }));
+    document.getElementById('viewer-close').addEventListener('click',()=>viewer.close());
+    viewer.addEventListener('click',event=>{if(event.target===viewer){const r=viewer.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)viewer.close();}});
+  </script>
   <footer class="wrap"><span>Thiago Nascimento · character concept</span><span>Created for Edward's project</span></footer>
 </body>
 </html>
